@@ -1,16 +1,16 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Work(models.Model):
     organization = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, unique=True)
     profession = models.CharField(max_length=50, db_index=True)
-    date_start = models.DateField(auto_now=True)
-    date_end = models.DateField(auto_now=True)
+    date = models.CharField(max_length=30)
     description = models.TextField()
 
     class Meta:
-        ordering = ('date_start',)
+        ordering = ('organization',)
         verbose_name = 'Организация'
         verbose_name_plural = 'Опыт работы'
 
@@ -21,12 +21,11 @@ class Work(models.Model):
 class Education(models.Model):
     university = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, unique=True)
-    date_start = models.DateField(auto_now=True)
-    date_end = models.DateField(auto_now=True)
+    date = models.CharField(max_length=30)
     description = models.TextField()
 
     class Meta:
-        ordering = ('date_start',)
+        ordering = ('university',)
         verbose_name = 'Университет'
         verbose_name_plural = 'Образование'
 
@@ -35,13 +34,14 @@ class Education(models.Model):
 
 
 class Course(models.Model):
-    organization = models.CharField(max_length=100, db_index=True)
-    slug = models.SlugField(max_length=100, unique=True)
-    date = models.DateField(auto_now=True)
+    organization = models.CharField(max_length=100)
+    title = models.CharField(max_length=250)
+    date = models.CharField(max_length=30)
+    description = models.TextField()
     certificate = models.ImageField(blank=True)
 
     class Meta:
-        ordering = ('date',)
+        ordering = ('organization',)
         verbose_name = 'Курс'
         verbose_name_plural = 'Курсы'
 
@@ -64,27 +64,27 @@ class Skill(models.Model):
         return self.skill
 
 
-class Projects(models.Model):
-    name = models.CharField(max_length=30)
+class Technology(models.Model):
+    technology = models.CharField(max_length=30, db_index=True)
     slug = models.SlugField(max_length=30, unique=True)
 
     class Meta:
-        ordering = ('name',)
-        verbose_name = 'Проект'
-        verbose_name_plural = 'Проекты'
+        ordering = ('technology',)
+        verbose_name = 'Технология'
+        verbose_name_plural = 'Технологии'
 
     def __str__(self):
-        return self.name
+        return self.technology
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=250, unique=True)
+    title = models.CharField(max_length=250, db_index=True)
+    slug = models.SlugField(max_length=250, db_index=True, unique=True)
     body = models.TextField()
     image = models.ImageField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
-    categories = models.ManyToManyField('Projects', related_name='posts')
+    technology = models.ManyToManyField(Technology, related_name='projects')
 
     class Meta:
         ordering = ('title',)
@@ -109,3 +109,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.author
+
+    def get_absolute_url(self):
+        return reverse('main:project_detail', args=[self.id])

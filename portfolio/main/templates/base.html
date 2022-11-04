@@ -1,0 +1,93 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="icon" href="{% static 'images/icons8.png' %}" type="image/x-icon">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Kolker+Brush&family=Montserrat+Alternates&family=Montserrat:wght@400;700&display=swap"
+          rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <div class="container__base">
+        <div class="header">
+            <div class="header__title">А.Турлак</div>
+            <ul class="header__menu">
+                <li class="header__menu-item"><a href="#">Главная</a></li>
+                <li class="header__menu-item"><a href="#">Обо мне</a></li>
+                <li class="header__menu-item"><a href="#" target="_blank">Резюме</a></li>
+                <li class="header__menu-item"><a href="#">Проекты</a></li>
+                <li class="header__menu-item"><a href="#" target="_blank">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+{% block content %}
+{% endblock %}
+<footer>
+    <div class="container__base">
+        <div class="footer">
+            <div class="footer__title">2022 А.Турлак</div>
+            <ul class="footer__menu">
+                 <li class="footer__menu-item">
+                    <a class="footer__menu-link" href="https://www.linkedin.com/in/anzhalika-turlak-b3307414a" target="_blank">
+                        <svg class="footer__menu-svg">
+                            <use xlink:href="{% static 'images/sprite.svg' %}#linked"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="footer__menu-item">
+                    <a class="footer__menu-link" href="https://github.com/Anzhelika007" target="_blank">
+                        <svg class="footer__menu-svg">
+                            <use xlink:href="{% static 'images/sprite.svg' %}#github-1"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="footer__menu-item">
+                    <a class="footer__menu-link" href="mailto:293852647@mail.ru" target="_blank">
+                        <svg class="footer__menu-svg">
+                            <use class="color" xlink:href="{% static 'images/sprite.svg' %}#mail-bl"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="footer__menu-item">
+                    <a class="footer__menu-link" href="tel:80293852647">
+                        <svg class="footer__menu-svg">
+                            <use xlink:href="{% static 'images/sprite.svg' %}#phone-call"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="footer__menu-item">
+                    <a class="footer__menu-link" href="https://t.me/Lika_by" target="_blank">
+                        <svg class="footer__menu-svg">
+                            <use xlink:href="{% static 'images/sprite.svg' %}#telegramm "></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="footer__menu-item">
+                    <a class="footer__menu-link" class="footer__menu-link" href="https://wa.me/80293852647" target="_blank">
+                        <svg class="footer__menu-svg">
+                            <use  xlink:href="{% static 'images/sprite.svg' %}#watsapp"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="footer__menu-item">
+                    <a class="footer__menu-link" href="viber://chat?number=%2B375293852647" target="_blank">
+                        <svg class="footer__menu-svg">
+                            <use class="color" xlink:href="{% static 'images/sprite.svg' %}#viber "></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

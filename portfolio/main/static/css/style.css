@@ -1,0 +1,112 @@
+:root{
+    --main-name-font: 'Comforter Brush', cursive;
+    --color-icon-text: #2F3035;
+}
+
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*,
+*::after,
+::before{
+    box-sizing: inherit;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+ul,
+li{
+    margin: 0;
+    padding:0;
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+p{
+    margin: 0;
+}
+body{
+    color: var(--color-icon-text);
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    background: #E7E4E2;
+}
+.container__base{
+    max-width: 1400px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.header{
+    margin: 60px 0 30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.header__title{
+    font-family: var(--main-name-font);
+    font-size: 50px;
+}
+.header__menu{
+    display: flex;
+    justify-content: space-between;
+}
+.header__menu-item{
+    padding: 0 1em;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    padding-top: 20px;
+}
+.footer__menu{
+    display: flex;
+    justify-content: space-between;
+}
+.footer__title::before{
+    content: "©";
+    padding-right: 10px;
+}
+.footer__menu-link{
+    padding-right: 20px;
+    fill: var(--color-icon-text);
+}
+.footer__menu-svg{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    transition: .2s;
+}
+.footer__menu-svg:hover{
+    transform: scale(1.4);
+    fill: green;
+}
+ul.footer__menu > li:first-child > a>svg:hover{
+    fill: #0e76a8;
+}
+ul.footer__menu > li:nth-child(2) > a>svg:hover{
+    fill: black;
+}
+ul.footer__menu > li:nth-child(3) > a>svg:hover{
+    fill: #C71610;
+}
+ul.footer__menu > li:nth-child(4) > a>svg:hover{
+    fill: #a2951c;
+}
+ul.footer__menu > li:nth-child(5) > a>svg:hover{
+    fill: #0088cc;
+}
+ul.footer__menu > li:nth-child(6) > a>svg:hover{
+    fill: #25D366;
+}
+ul.footer__menu > li:last-child > a>svg:hover{
+    fill: #8f5db7;
+}
+.footer__menu-item{
+    padding-right: 1em;
+}

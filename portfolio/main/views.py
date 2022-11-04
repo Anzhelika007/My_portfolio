@@ -3,14 +3,14 @@ from .models import Work, Education, Course, Skill, Technology, Project, Comment
 
 
 def index_render(request):
-    works = Work.objects.all().order_by('-id')
-    education = Education.objects.all().order_by('-id')
-    courses = Course.objects.all().order_by('-id')
+    works = Work.objects.all().order_by('id')
+    educations = Education.objects.all().order_by('id')
+    courses = Course.objects.all().order_by('id')
     skills = Skill.objects.all().order_by('-id')
     projects = Project.objects.all().order_by('-id')
     context = {
         "works": works,
-        "education": education,
+        "educations": educations,
         "courses": courses,
         "skills": skills,
         "projects": projects,

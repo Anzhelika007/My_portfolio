@@ -1,6 +1,7 @@
 :root{
     --main-name-font: 'Comforter Brush', cursive;
     --color-icon-text: #2F3035;
+    --color-background-base: #E7E4E2;
 }
 
 html{
@@ -35,7 +36,19 @@ body{
     font-size: 24px;
     line-height: 24px;
     font-weight: 400;
-    background: #E7E4E2;
+    background: var(--color-background-base);
+    margin: 0;
+}
+header{
+    height: 11vh;
+    line-height: 11vh;
+    position: fixed;
+    top:0;
+    left:0;
+    background: var(--color-background-base);
+    background-attachment: fixed;
+    z-index:1;
+    width: 100%;
 }
 .container__base{
     max-width: 1400px;
@@ -43,9 +56,10 @@ body{
     margin: 0 auto;
 }
 .header{
-    margin: 60px 0 30px 0;
     display: flex;
     justify-content: space-between;
+    left:50%;
+    top:0;
 }
 .header__title{
     font-family: var(--main-name-font);
@@ -62,11 +76,14 @@ body{
     display: flex;
     justify-content: space-between;
     border-top: 1px solid black;
-    padding-top: 20px;
+    padding: 20px 0;
 }
 .footer__menu{
     display: flex;
     justify-content: space-between;
+}
+.footer__title{
+    line-height: 50px;
 }
 .footer__title::before{
     content: "©";
@@ -110,3 +127,84 @@ ul.footer__menu > li:last-child > a>svg:hover{
 .footer__menu-item{
     padding-right: 1em;
 }
+/*---------index----------- */
+/*=========home============ */
+.home{
+    position: relative;
+    height: 100vh;
+}
+.home__wrapper {
+    display: flex;
+    padding-top: 11vh;
+}
+.home__info{
+    width: 50%;
+}
+.home__info-decor{
+    margin-top: 13vh;
+    font-family: var(--main-name-font);
+    font-size: 15vw;
+    line-height: 15vh;
+    letter-spacing: 20px;
+    color: #d3d3d3;
+    position: absolute;
+    left: 0.5em;
+}
+.home__info-title{
+    margin-top: 10vw;
+    font-family: var(--main-name-font);
+    font-size: 4vw;
+    font-width: 700;
+    line-height: 15vh;
+    letter-spacing: 10px;
+    position:relative;
+}
+.home__info-profession{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 2em;
+    line-height: 4em;
+    font-weight: 500;
+}
+.home__img-img{
+    position: absolute;
+    right: 5vw;
+    top: 16vh;
+    height: 84%;
+}
+/*=========about============ */
+.about{
+    background: var(--color-icon-text);
+    color: var(--color-background-base);
+}
+.about__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.about__title{
+    padding: 1em 0 0;
+    font-weight: 700;
+    font-size: 60px;
+    letter-spacing: 10px;
+}
+.about__title1{
+    padding: 3em 0 2em;
+    font-weight: 500;
+    font-size: 50px;
+    letter-spacing: 5px;
+}
+.about__title-card{
+
+}
+.about__container{
+    display: flex;
+}
+.about__card{
+    box-sizing: border-box;
+    width: 50%;
+    min-weight: 300px;
+}
+/*=========home============ */
+/*=========home============ */
+/*=========home============ */

@@ -3,11 +3,85 @@
 {% block title %}Главная{% endblock %}
 {% block content %}
 <section class="home">
-    <img src="{% static 'images/ava 3.png' %}">
-
+    <div class="home__wrapper container__base">
+        <div class="home__info">
+            <div class="home__info-decor">Анжелика</div>
+            <div class="home__info-title">Анжелика Турлак</div>
+            <div class="home__info-profession">Python-разработчик</div>
+            <div class="home__info-intro">Я Python-разработчик и сейчас нахожусь в поиске новых возможностей. Буду рада
+                присоединиться к
+                сплоченной команде для совместной работы на интересных проектах. Закончила курсы по разработке на
+                python, владею знаниями фреймворка Django. Также продолжаю изучать данный язык программирования и
+                все, что с ним связано самостоятельно.
+            </div>
+        </div>
+        <div class="home__img">
+            <img class="home__img-img" src="{% static 'images/ava 3.png' %}">
+        </div>
+    </div>
 </section>
-<section class="about"></section>
-<section class="projects"></section>
-<section class="contacts"></section>
+<section class="about">
+    <div class="about__wrapper container__base">
+        <div class="about__category">
+            <div class="about__title">Обо мне</div>
+        </div>
+        <div class="about__category">
+            <div class="about__title1">Образование</div>
+            <div class="about__container">
+                {% for education in educations %}
+                <div class="about__card">
+                    <div>
+                        <div>{{ education.university }}</div>
+                        <div>{{ education.date }}</div>
+                        <div>{{ education.description }}</div>
+                        <img src="{% if education.certificate %}{{ image.url }}{%else %}{% static 'img/no_image.png' %}{% endif %}">
+                        <div>{{ education.certificate }}</div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="about__category">
+            <div class="about__title1">Опыт работы</div>
+            <div class="about__container">
+                {% for work in works %}
+                <div class="about__card">
+                    <div>
+                        <div>{{ work.organization }}</div>
+                        <div>{{ work.profession }}</div>
+                        <div>{{ work.date }}</div>
+                        <div>{{ work.description }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="about__category">
+            <div class="about__title1">Курсы</div>
+            <div class="about__container">
+                {% for cours in courses %}
+                <div class="about__card">
+                    <div>
+                        <div>{{ cours.title }}</div>
+                        <div>{{ cours.organization }}</div>
+                        <div>{{ cours.date }}</div>
+                        <div>{{ cours.description }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="about__title1">Курсы</div>
+        <div class="about__title1">Предпочтения в работе</div>
+    </div>
+</section>
+<!--<section class="projects"></section>-->
+<!--<section class="contacts"></section>-->
 
 {% endblock %}

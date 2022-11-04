@@ -38,7 +38,8 @@ class Course(models.Model):
     title = models.CharField(max_length=250)
     date = models.CharField(max_length=30)
     description = models.TextField()
-    certificate = models.ImageField(blank=True)
+    certificate = models.ImageField(upload_to='sertificate/%Y/%m/%d',blank=True)
+    link= models.TextField()
 
     class Meta:
         ordering = ('organization',)

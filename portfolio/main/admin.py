@@ -41,3 +41,4 @@ class ProjectAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['author', 'organization', 'created_on', 'post']
     list_filter = ['author', 'post', 'created_on']
+

@@ -176,35 +176,55 @@ ul.footer__menu > li:last-child > a>svg:hover{
     background: var(--color-icon-text);
     color: var(--color-background-base);
 }
-.about__wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
 .about__title{
     padding: 1em 0 0;
     font-weight: 700;
     font-size: 60px;
     letter-spacing: 10px;
+    text-align: center;
 }
 .about__title1{
-    padding: 3em 0 2em;
+    padding: 2em 0 2em;
     font-weight: 500;
     font-size: 50px;
     letter-spacing: 5px;
-}
-.about__title-card{
-
+    text-align: center;
 }
 .about__container{
+    width: 100%;
     display: flex;
+    justify-content: space-evenly;
+    align-content: space-between;
+    flex-wrap: wrap;
 }
 .about__card{
     box-sizing: border-box;
-    width: 50%;
+    width: 40%;
     min-weight: 300px;
+    border: 1px solid #888888;
+    border-radius: 10px;
+    text-align: center;
+    padding: 25px 15px;
+    background: #848482;
 }
+.about__card-title{
+    font-weight: 700;
+    line-height: 40px;
+    padding-bottom: 10px;
+    letter-spacing: 5px;
+}
+.about__card-ears{
+    padding-bottom: 20px;
+}
+.about__card-description{}
+.about__card-img{
+    width: 70%;
+}
+
+
+
+.about__card-title{}
+.about__card-title{}
 /*=========home============ */
 /*=========home============ */
 /*=========home============ */

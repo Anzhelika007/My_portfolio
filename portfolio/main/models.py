@@ -38,8 +38,8 @@ class Course(models.Model):
     title = models.CharField(max_length=250)
     date = models.CharField(max_length=30)
     description = models.TextField()
-    certificate = models.ImageField(upload_to='sertificate/%Y/%m/%d',blank=True)
-    link= models.TextField()
+    certificate = models.ImageField(upload_to='sertificate/',blank=True)
+
 
     class Meta:
         ordering = ('organization',)
@@ -53,7 +53,7 @@ class Course(models.Model):
 class Skill(models.Model):
     skill = models.CharField(max_length=30, db_index=True)
     slug = models.SlugField(max_length=30, unique=True)
-    icon = models.ImageField(blank=True)
+    icon = models.ImageField(upload_to='icon/', blank=True)
     percent = models.IntegerField()
 
     class Meta:
@@ -82,10 +82,11 @@ class Project(models.Model):
     title = models.CharField(max_length=250, db_index=True)
     slug = models.SlugField(max_length=250, db_index=True, unique=True)
     body = models.TextField()
-    image = models.ImageField(blank=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    last_modified = models.DateTimeField(auto_now=True)
-    technology = models.ManyToManyField(Technology, related_name='projects')
+    image = models.ImageField(upload_to='project/', blank=True)
+    created_on = models.DateField(auto_now_add=True)
+    last_modified = models.DateField(auto_now=True)
+    technology = models.ManyToManyField('Technology', related_name='projects')
+    link = models.TextField()
 
     class Meta:
         ordering = ('title',)

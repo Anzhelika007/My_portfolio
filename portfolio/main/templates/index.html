@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}Главная{% endblock %}
 {% block content %}
-<section class="home">
+<section class="home" id="head">
     <div class="home__wrapper container__base">
         <div class="home__info">
             <div class="home__info-decor">Анжелика</div>
@@ -20,8 +20,8 @@
         </div>
     </div>
 </section>
-<section class="about">
-    <div class="container__base">
+<section class="about" id="about">
+    <div class="container__base" >
         <div class="about__title">Обо мне</div>
         <div class="about__title1">Образование</div>
         <div class="about__container">
@@ -109,10 +109,9 @@
             разработчика, через три/четыре года до Senior.
             Нацелена развиваться и стать Team Lead.
         </div>
-
     </div>
 </section>
-<section class="projects">
+<section class="projects" id="projects">
     <div class="about__wrapper container__base">
         <div class="about__category">
             <div class="about__title">Проекты</div>
@@ -126,7 +125,7 @@
                     <div>Технологии: {% for technol in project.technology.all %}
                         {{ technol.technology }}{% endfor %}
                     </div>
-                    <div>{{ project.link | slice:":10"}}...</div>
+                    <div>Ссылка: {{ project.link | slice:":10"}}...</div>
                     <div class="about__card-ears">{{ project.created_on}}</div>
 
                 </div>
@@ -135,8 +134,8 @@
         </div>
     </div>
 </section>
-<section class="contacts">
+<!--<section class="contacts">-->
 
-</section>
+<!--</section>-->
 
 {% endblock %}

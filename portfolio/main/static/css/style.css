@@ -142,7 +142,7 @@ ul.footer__menu > li:last-child > a>svg:hover{
 .home__info{
     width: 50%;
 }
-.home__info-decor{
+/*.home__info-decor{
     margin-top: 13vh;
     font-family: var(--main-name-font);
     font-size: 15vw;
@@ -151,10 +151,10 @@ ul.footer__menu > li:last-child > a>svg:hover{
     color: #d3d3d3;
     position: absolute;
     left: 0.5em;
-}
-.home__info-decor:hover{
-    color: #423189;
-}
+}*/
+/*.home__info-decor:hover{
+    color: #9899ca;
+}*/
 .home__info-title{
     margin-top: 10vw;
     font-family: var(--main-name-font);
@@ -226,7 +226,7 @@ ul.footer__menu > li:last-child > a>svg:hover{
     letter-spacing: 3px;
 }
 .about__card:hover > .about__card-title{
-    color: red;
+    color: #9899ca;
 }
 .about__card-ears{
     padding-bottom: 20px;

@@ -3,7 +3,6 @@
     --color-icon-text: #2F3035;
     --color-background-base: #E7E4E2;
 }
-
 html{
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -71,6 +70,9 @@ header{
 }
 .header__menu-item{
     padding: 0 1em;
+}
+.header__title:hover{
+    color: red;
 }
 .footer{
     display: flex;
@@ -150,6 +152,9 @@ ul.footer__menu > li:last-child > a>svg:hover{
     position: absolute;
     left: 0.5em;
 }
+.home__info-decor:hover{
+    color: #423189;
+}
 .home__info-title{
     margin-top: 10vw;
     font-family: var(--main-name-font);
@@ -157,7 +162,7 @@ ul.footer__menu > li:last-child > a>svg:hover{
     font-width: 700;
     line-height: 15vh;
     letter-spacing: 10px;
-    position:relative;
+    position: relative;
 }
 .home__info-profession{
     font-family: 'Montserrat Alternates', sans-serif;
@@ -175,6 +180,7 @@ ul.footer__menu > li:last-child > a>svg:hover{
 .about{
     background: var(--color-icon-text);
     color: var(--color-background-base);
+    padding: 15px 0 80px;
 }
 .about__title{
     padding: 1em 0 0;
@@ -184,7 +190,7 @@ ul.footer__menu > li:last-child > a>svg:hover{
     text-align: center;
 }
 .about__title1{
-    padding: 2em 0 2em;
+    padding: 1em 0 2em;
     font-weight: 500;
     font-size: 50px;
     letter-spacing: 5px;
@@ -201,30 +207,121 @@ ul.footer__menu > li:last-child > a>svg:hover{
     box-sizing: border-box;
     width: 40%;
     min-weight: 300px;
-    border: 1px solid #888888;
+    border: 2px solid #888888;
     border-radius: 10px;
     text-align: center;
     padding: 25px 15px;
-    background: #848482;
+    background: #3b3c42;
+    transition: .2s;
+    margin: 20px 0 30px;
+}
+.about__card:hover{
+    transform: scale(1.2);
+    box-shadow: 0px 0px 40px 2px rgba(34, 60, 80, 0.76) inset;
 }
 .about__card-title{
     font-weight: 700;
     line-height: 40px;
     padding-bottom: 10px;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
+}
+.about__card:hover > .about__card-title{
+    color: red;
 }
 .about__card-ears{
     padding-bottom: 20px;
 }
 .about__card-description{}
+.about__card-certificate{
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.about__card-certificate-img{
+    width: 20%;
+    min-width: 300px;
+    transition: .2s;
+    border-radius: 5px;
+}
+.about__card-certificate-img:hover{
+    transform: scale(1.4);
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+}
+.about__skills{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.about__skills-block{
+    display: flex;
+    width: 20%;
+    margin: 20px;
+    padding: 2px 10px;
+    transition: .2s;
+    border-radius: 10px;
+}
+.about__skills-block:hover{
+    transform: scale(1.4);
+    color: green;
+    box-shadow: 5px 5px 55px 2px rgba(210, 224, 234, 0.6);
+}
+.about__skills-img{
+    width: 100px;
+    padding-right: 15px;
+}
+.about__skills-block > .about__card-title{
+    align-self: center;
+}
+.about__quality{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.about__quality-block{
+    display: flex;
+    margin: 0 30px;
+}
+.about__quality-block > .about__card-description{
+    align-self: center;
+    padding-left: 20px;
+    line-height: 25px;
+}
+.about__me{
+    line-height: 25px;
+    text-align: justify;
+	text-align-last: justify;
+}
+/*=========projects============ */
+.projects{
+    padding: 30px 0 100px;
+}
+.cart__project{
+    width: 30%;
+    margin: 100px 20px 0;
+    border-radius: 5px;
+    padding: 0;
+    background: var(----color-background-base);
+    line-height: 30px;
+    word-wrap: wrap;
+}
 .about__card-img{
-    width: 70%;
+    border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+}
+/*=========contacts============ */
+.contacts{
+    background: var(--color-icon-text);
+    color: var(--color-background-base);
+    padding: 15px 0 80px;
 }
 
 
 
-.about__card-title{}
-.about__card-title{}
-/*=========home============ */
-/*=========home============ */
+
+
+
 /*=========home============ */

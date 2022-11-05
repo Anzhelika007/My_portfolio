@@ -57,14 +57,52 @@
                     <div>{{ cours.organization }}</div>
                     <div class="about__card-ears">{{ cours.date }}</div>
                     <div>{{ cours.description }}</div>
-                    <img class="about__card-img" src="{{ cours.certificate.url }}">
                 </div>
+                {% endfor %}
+            </div>
+            <div class="about__card-certificate">
+                {% for cours in courses %}
+                <img class="about__card-certificate-img" src="{{ cours.certificate.url }}">
                 {% endfor %}
             </div>
         </div>
 
+        <div class="about__title1">Навыки</div>
+        <div class="about__skills">
+            {% for skill in skills %}
+            <div class="about__skills-block">
+                <img class="about__skills-img" src="{{ skill.icon.url }}">
+                <div class="about__card-title">{{ skill.skill }}</div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="about__title1">Личные качества</div>
+        <div class="about__quality">
+            <div class="about__quality-block">
+                <img class="about__quality-img" src="{% static 'images/icons-group.png' %}">
+                <div class="about__card-description">Командная работа</div>
+            </div>
+            <div class="about__quality-block">
+                <img class="about__quality-img" src="{% static 'images/icons-women.png' %}">
+                <div class="about__card-description">Проактивность</div>
+            </div>
+            <div class="about__quality-block">
+                <img class="about__quality-img" src="{% static 'images/icons-time.png' %}">
+                <div class="about__card-description">Тайм-менеджмент</div>
+            </div>
+            <div class="about__quality-block">
+                <img class="about__quality-img" src="{% static 'images/icons-hends.png' %}">
+                <div class="about__card-description">Гибкость</div>
+            </div>
+            <div class="about__quality-block">
+                <img class="about__quality-img" src="{% static 'images/icons-com.png' %}">
+                <div class="about__card-description">Коммуникативность</div>
+            </div>
+        </div>
+
         <div class="about__title1">Предпочтения в работе</div>
-        <div>Я Python-разработчик и сейчас нахожусь в поиске новых возможностей.
+        <div class="about__me">Я Python-разработчик и сейчас нахожусь в поиске новых возможностей.
             Предпочитаю работу в офисе, так как считаю, что работа в команде в
             формате офлайн - залог успеха для качественного создания проекта.
             Мои цели на ближайшее время: через год/два хотела бы дорасти до Middle
@@ -72,8 +110,6 @@
             Нацелена развиваться и стать Team Lead.
         </div>
 
-        <div class="about__title1">Личные качества</div>
-        <div>Командная работа, Проактивность, Тайм-менеджмент,Гибкость, Коммуникативность</div>
     </div>
 </section>
 <section class="projects">
@@ -84,20 +120,23 @@
         <div class="about__category">
             <div class="about__container">
                 {% for project in projects %}
-                <div class="about__card">
+                <div class="about__card cart__project">
+                    <img class="about__card-img" src="{{ project.image.url }}">
                     <div class="about__card-title">{{ project.title }}</div>
                     <div>Технологии: {% for technol in project.technology.all %}
                         {{ technol.technology }}{% endfor %}
                     </div>
-                    <div>{{ project.link }}</div>
+                    <div>{{ project.link | slice:":10"}}...</div>
                     <div class="about__card-ears">{{ project.created_on}}</div>
-                    <img class="about__card-img" src="{{ project.image.url }}">
+
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
 </section>
-<!--<section class="contacts"></section>-->
+<section class="contacts">
+
+</section>
 
 {% endblock %}

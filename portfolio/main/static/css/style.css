@@ -320,9 +320,13 @@ ul.footer__menu > li:last-child > a>svg:hover{
     padding: 15px 0 80px;
 }
 
-
-
-
-
-
 /*=========home============ */
+
+/*---------project_detail----------- */
+.project__detail{
+     padding-top: 11vh;
+}
+.project__detail-wrapper{
+    display: flex;
+    width: 100%;
+}

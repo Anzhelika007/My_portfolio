@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ project.title }}{% endblock %}
+{% block content %}
+<section class="project__detail container__base">
+    <div class="project__detail-wrapper">
+        <div class="project__detail-img">
+            <img class="about__card-img" src="{{ project.image.url }}">
+        </div>
+        <div class="project__detail-content">
+            <div>{{ project.title }}</div>
+            <div>Технологии: {% for technol in project.technology.all %}
+                {{ technol.technology }}
+                {% endfor %}
+            </div>
+            <div>{{ project.body }}</div>
+            <div>{{ project.created_on }}</div>
+            <div>{{ project.link }}</div>
+        </div>
+    </div>
+
+
+    <h5>Оставьте комментарий:</h5>
+    <form  action="." method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.author }}
+        </div>
+        <div class="form-group">
+            {{ form.organization }}
+        </div>
+        <div class="form-group">
+            {{ form.body }}
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+    <h3>Комментарии:</h3>
+    {% for comment in comments %}
+    <p>
+        On {{ comment.created_on.date }}&nbsp;
+        <b>{{ comment.author }}</b> написал(а):
+    </p>
+    <p>{{ comment.body }}</p>
+    <hr>
+    {% endfor %}
+</section>
+
+{% endblock %}

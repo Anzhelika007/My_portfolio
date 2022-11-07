@@ -119,23 +119,21 @@
         <div class="about__category">
             <div class="about__container">
                 {% for project in projects %}
-                <div class="about__card cart__project">
-                    <img class="about__card-img" src="{{ project.image.url }}">
-                    <div class="about__card-title">{{ project.title }}</div>
-                    <div>Технологии: {% for technol in project.technology.all %}
-                        {{ technol.technology }}{% endfor %}
+                    <div class="about__card cart__project">
+                        <img class="about__card-img" src="{{ project.image.url }}">
+                        <div>Технологии: {% for technol in project.technology.all %}
+                            {{ technol.technology }}{% endfor %}
+                        </div>
+                        <div>Ссылка: {{ project.link | slice:":10"}}...</div>
+                        <div class="about__card-ears">{{ project.created_on}}</div>
+                        <div class="about__card-ears">{{ project.id }}</div>
+                        <a href="{% url 'portfolio:project' project.id %}">Подробнее</a>
                     </div>
-                    <div>Ссылка: {{ project.link | slice:":10"}}...</div>
-                    <div class="about__card-ears">{{ project.created_on}}</div>
-
-                </div>
                 {% endfor %}
             </div>
         </div>
     </div>
 </section>
-<!--<section class="contacts">-->
 
-<!--</section>-->
 
 {% endblock %}
